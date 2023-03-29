@@ -679,3 +679,8 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     pointer-events: none;
 }
 
+.anetdot{
+    display: flex;
+        justify-content: center;
+        align-items: center;
+}
