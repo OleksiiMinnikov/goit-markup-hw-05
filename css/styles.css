@@ -148,11 +148,10 @@ body {
 .header-logo-hi {
     color: var(--header-logo-hi)
 }
-.header-item::before {
+.header-item::after {
     content: "";
     position: absolute;
-    bottom: -4px;
-    /* змінити bottom на -1px */
+    top: 44px;
     left: 0;
     height: 4px;
     width: 100%;
@@ -161,7 +160,6 @@ body {
     transform: scaleX(0);
 }
 
-/* Решта стилів без змін */
 .header-item {
     font-weight: 500;
     font-size: 16px;
@@ -169,23 +167,20 @@ body {
     letter-spacing: 0.02em;
     color: var(--header-item);
     position: relative;
-
-    padding: 24px 0;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.header-item:hover::before,
-.header-item:focus::before {
+.header-item:hover::after,
+.header-item:focus::after {
     transform: scaleX(1);
-    /* Збільшити ширину підкреслення до 100% */
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-item:hover,
 .header-item:focus {
     color: var(--ocean-color);
-    
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-
 
 .header-address {
     font-style: normal;
@@ -205,6 +200,7 @@ body {
 .header-item-adress:focus {
     font-style: normal;
     color: var(--ocean-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .header-address-link{
     gap: 40px;
@@ -267,6 +263,7 @@ body {
 .hero-button:hover,
 .hero-button:focus { 
     background-color: var(--ocean-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -397,6 +394,7 @@ body {
 .team-soc-link:hover,
 .team-soc-link:focus {
     background-color: var(--ocean-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*********** Customers ***********/
@@ -431,6 +429,7 @@ body {
 .customers-link:focus {
     border: 1px solid var(--ocean-color);
     fill: var(--ocean-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .customers-item {
@@ -475,9 +474,11 @@ body {
 .portfolio-button:focus {
     background-color: var(--ocean-color);
     color: var(--portfolio-bg-focus);
-    border: 1px solid transparent;
-    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
     
+    border-color: 1px solid transparent;
+    
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 /*********** SECTION PORTFOLIO ***********/
 .portfolio{
@@ -486,6 +487,7 @@ body {
 }
 .portfolio-list:hover .portfolio-cover-text {
     transform: translateY(0);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
    
 }
 
@@ -504,12 +506,12 @@ body {
 }
 .portfolio-cards-link:hover,
 .portfolio-cards-link:focus {
-box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
         0px 1px 1px rgba(46, 47, 66, 0.16),
         0px 2px 1px rgba(46, 47, 66, 0.08)
-
-
 }
+
 .portfolio-cards{
     border-right: 1px solid var(--cornflower);
     border-bottom: 1px solid var(--cornflower);
@@ -627,6 +629,7 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 .footer-soc-link:hover,
 .footer-soc-link:focus{
     background-color: #31D0AA;
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /*********** MODAL ***********/
@@ -672,6 +675,20 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
 
     margin-left: auto;
 }
+.button-modal:hover,
+.button-modal:focus {
+    background-color: var(--ocean-color);
+    border: var(--ocean-color);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button-modal:hover .button-close,
+.button-modal:focus .button-close {
+    fill: #FFFFFF;
+    transition: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 
 .is-hidden{
     opacity: 0;
@@ -679,8 +696,3 @@ box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     pointer-events: none;
 }
 
-.anetdot{
-    display: flex;
-        justify-content: center;
-        align-items: center;
-}
